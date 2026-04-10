@@ -5,7 +5,7 @@ public class Humain {
 
     private String nom;
     private String boisson;
-    private int argent;
+    protected int argent;
 
     public Humain(String nom, String boisson, int argent) {
         this.nom = nom;
@@ -21,15 +21,15 @@ public class Humain {
         return argent;
     }
 
-    private void gagnerArgent(int gain) {
+    protected void gagnerArgent(int gain) {
         argent += gain;
     }
 
-    private void perdreArgent(int perte) {
+    protected void perdreArgent(int perte) {
         argent -= perte;
     }
 
-    private void parler(String texte) {
+    protected void parler(String texte) {
         System.out.println("(" + nom + ") - " + texte);
     }
 
