@@ -81,7 +81,7 @@ public class Humain {
     	
     	for ( int i=0 ; i < NbConaissance; i++ ) {
     		liste += memoire[i].getNom();
-
+    		liste+= ' ';
     	}
     	
     	parler("Je connais beaucoup de monde dont : " + liste);
