@@ -6,7 +6,7 @@ public class Humain {
     private String nom;
     private String boisson;
     protected int argent;
-    protected int NbConaissance;
+    protected int NbConaissance = 0;
     protected Humain[] memoire = new Humain[30];
 
     public Humain(String nom, String boisson, int argent) {
@@ -66,26 +66,24 @@ public class Humain {
     }
     
     private void repondre( Humain humain) {
-    	humain.direBonjour();
-    	humain.memoriser(this);
+    	direBonjour();
+    	memoriser(humain);
     }
     
     public void faireConaissanceAvec( Humain humain ) {
     	direBonjour();
-    	repondre(humain);
+    	humain.repondre(this);
     	memoriser(humain);
     }
     
-    public void listerConaissance() {
+    public void listerConnaissance() {
     	String liste = "";
     	
-    	for ( int i=0 ; i < 30; i++ ) {
-    		if ( i > 0 ) {
-    			liste += ", ";
-    		}
+    	for ( int i=0 ; i < NbConaissance; i++ ) {
     		liste += memoire[i].getNom();
+
     	}
     	
-    	parler("Je connais beaucoup de monde dont : " + liste +".");
+    	parler("Je connais beaucoup de monde dont : " + liste);
     }
 }
